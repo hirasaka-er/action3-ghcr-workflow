@@ -3,12 +3,15 @@ name: Build and Push to ghcr
 
 # イベント
 on:
+  # メインブランチPUSH
+  push:
+    branches: [ "main" ]
   # 手動実行
   workflow_dispatch:
 
 permissions:
   contents: read
-  packages: read
+  packages: write
 
 # ジョブ
 jobs:
