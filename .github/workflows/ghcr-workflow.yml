@@ -36,10 +36,14 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ github.token }}
 
-      # GitHubのリポジトリの情報を環境変数にセット
+      # GitHubのリポジトリの情報を変数にセット
       - name: Lowercase the repo name and username
         run: echo "REPO=${GITHUB_REPOSITORY,,}" >>${GITHUB_ENV}
 
+      # 変数の中身をログに残す
+      - name: show env.REPO
+        run: echo ${{ env.REPO }}
+        
       # Dockerビルドとghcrへのプッシュを実施
       - name: Build and push container image to registry
         uses: docker/build-push-action@0565240e2d4ab88bba5387d719585280857ece09 # v5.0.0
