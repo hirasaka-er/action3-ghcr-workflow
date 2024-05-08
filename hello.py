@@ -9,7 +9,7 @@ app = Flask(__name__)
 #ブラウザで[localhost]の仮想ディレクトリルートが指定された場合の挙動（hello worldを出力）
 @app.route('/')
 def hello():
-    return 'hello world 2'
+    return 'hello world 3'
 
 #webサーバを起動
 if __name__ == '__main__':
